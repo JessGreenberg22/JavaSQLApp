@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="363.0" prefWidth="516.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AppointmentScreen">
+   <children>
+      <TableView layoutX="71.0" layoutY="61.0" prefHeight="200.0" prefWidth="381.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Customer ID" />
+          <TableColumn prefWidth="75.0" text="Name" />
+        </columns>
+      </TableView>
+      <Button layoutX="29.0" layoutY="286.0" mnemonicParsing="false" text="Schedule Appointment" />
+      <Label prefHeight="17.0" prefWidth="225.0" text="Appointments" />
+      <Button layoutX="353.0" layoutY="286.0" mnemonicParsing="false" text="Cancel Appointment" />
+      <Button layoutX="194.0" layoutY="286.0" mnemonicParsing="false" text="Update Appointment" />
+      <Button fx:id="returnbtnID" layoutX="193.0" layoutY="324.0" mnemonicParsing="false" onAction="#returnOnAction" text="Return to Main Menu" />
+   </children>
+</AnchorPane>
