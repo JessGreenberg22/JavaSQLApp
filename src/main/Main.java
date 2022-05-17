@@ -24,7 +24,7 @@ Opens and closes connections to Database
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load((getClass().getResource("/view/loginScreen.fxml")));
-        primaryStage.setTitle("Log In");
+        primaryStage.setTitle("Customer Scheduling System/CRM");
         primaryStage.setScene(new Scene(root, 300, 400));
         primaryStage.show();
     }

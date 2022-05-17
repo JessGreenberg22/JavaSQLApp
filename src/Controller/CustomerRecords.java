@@ -6,32 +6,24 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class LoginScreen implements Initializable {
-
-
-    public Button LogInButton;
-    public Label welcomeLabel;
-    public Label enterUserIdLabel;
+public class CustomerRecords implements Initializable {
+    public Button returnButton;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
-
     /** Navigate to the MainScreen */
-    public void logInBtn(ActionEvent event) throws IOException {
-
+    public void returnToMainScreenAction(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/MainScreen.fxml")));
-        Stage window = (Stage) LogInButton.getScene().getWindow();
+        Stage window = (Stage) returnButton.getScene().getWindow();
         window.setScene(new Scene(root, 600,400));
     }
 }
