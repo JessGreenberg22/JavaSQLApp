@@ -1,4 +1,4 @@
-package helper;
+/*package dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,7 +20,7 @@ public abstract class JDBC {
     /*
     Method Opening Connections to the Referenced Database
      */
-    public static void openConnection()
+  /*  public static void openConnection()
     {
         try{
             Class.forName(driver); // Locate Driver
@@ -35,7 +35,7 @@ public abstract class JDBC {
     /*
        Method Closing Connections to the Referenced Database
         */
-    public static void closeConnection()
+    /*public static void closeConnection()
     {
         try{
             connection.close();
@@ -46,4 +46,4 @@ public abstract class JDBC {
             System.out.println("Error:" + e.getMessage());
         }
     }
-}
+}***/
