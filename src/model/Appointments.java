@@ -88,7 +88,7 @@ public class Appointments {
     public void setEndDateTime(Timestamp endDateTime)
     {this.endDateTime = endDateTime;}
 
-    public void setCustomerIdId(int customerId)
+    public void setCustomerId(int customerId)
     {this.customerId = customerId;}
 
     public void setUserId(int userId)

@@ -26,7 +26,7 @@ public class MainScreen implements Initializable{
     public void custRecordsAction(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/customerRecords.fxml")));
         Stage window = (Stage) custRecordsID.getScene().getWindow();
-        window.setScene(new Scene(root, 650,455));
+        window.setScene(new Scene(root, 800,455));
     }
     /**Navigation to Appointment Screen*/
     public void appointmentBtnAction(ActionEvent actionEvent) throws IOException {

@@ -21,8 +21,11 @@ public user(String userName,String password)
     this.password = password;
 }
 
+    public user(int userId, String userName, String userPassword) {
+    }
 
-/**getters*/
+
+    /**getters*/
 public int getUserId()
 { return userId; }
 

@@ -1,8 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ScheduleAppointment">
-
+<AnchorPane prefHeight="465.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ScheduleAppointment">
+   <children>
+      <Label layoutX="223.0" layoutY="14.0" text="Schedule an Appointment">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="60.0" text="Appointment ID" />
+      <Label layoutX="20.0" layoutY="90.0" text="Title" />
+      <Label layoutX="20.0" layoutY="120.0" text="Description" />
+      <Label layoutX="20.0" layoutY="150.0" text="Location" />
+      <Label layoutX="20.0" layoutY="180.0" text="Contact" />
+      <Label layoutX="20.0" layoutY="210.0" text="Type" />
+      <Label layoutX="20.0" layoutY="240.0" text="Start date and time" />
+      <Label layoutX="20.0" layoutY="270.0" text="End date and time" />
+      <Label layoutX="20.0" layoutY="300.0" text="Customer ID" />
+      <Label layoutX="20.0" layoutY="330.0" text="User ID" />
+      <TextField editable="false" layoutX="132.0" layoutY="60.0" />
+      <TextField layoutX="132.0" layoutY="90.0" />
+      <TextField layoutX="132.0" layoutY="120.0" />
+      <TextField layoutX="132.0" layoutY="150.0" />
+      <TextField layoutX="132.0" layoutY="180.0" />
+      <TextField layoutX="132.0" layoutY="210.0" />
+      <TextField layoutX="132.0" layoutY="240.0" />
+      <TextField layoutX="132.0" layoutY="270.0" />
+      <TextField layoutX="132.0" layoutY="300.0" />
+      <TextField layoutX="132.0" layoutY="330.0" />
+      <Button layoutX="51.0" layoutY="406.0" mnemonicParsing="false" text="Schedule Appointment" />
+      <Button fx:id="ReturnToAppointmentScreenId" layoutX="249.0" layoutY="406.0" mnemonicParsing="false" onAction="#ReturnToAppointmentScreenBtn" text="Return to Appointments Screen" />
+      <Button fx:id="returnToMainScreenId" layoutX="498.0" layoutY="406.0" mnemonicParsing="false" onAction="#returnToMainScreenBtn" text="Return to Main Menu" />
+   </children>
 </AnchorPane>

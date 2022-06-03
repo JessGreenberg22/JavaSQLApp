@@ -7,8 +7,8 @@
    <children>
       <TableView layoutX="46.0" layoutY="66.0" prefHeight="200.0" prefWidth="334.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn prefWidth="75.0" text="User ID" />
+          <TableColumn prefWidth="75.0" text="Name" />
         </columns>
       </TableView>
       <Button fx:id="custRecordsID" layoutX="443.0" layoutY="82.0" mnemonicParsing="false" onAction="#custRecordsAction" text="Customer Records" />

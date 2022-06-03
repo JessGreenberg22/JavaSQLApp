@@ -2,18 +2,22 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="440.0" prefWidth="608.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CustomerRecords">
+<AnchorPane prefHeight="440.0" prefWidth="761.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CustomerRecords">
    <children>
       <Label layoutX="31.0" layoutY="106.0" text="Customer ID" />
       <Label layoutX="22.0" layoutY="138.0" text="Customer Name" />
       <Label layoutX="44.0" layoutY="168.0" text="Address" />
       <Label layoutX="34.0" layoutY="200.0" text="Postal code" />
       <Label layoutX="24.0" layoutY="236.0" text="Phone Number" />
-      <TableView layoutX="279.0" layoutY="38.0" prefHeight="302.0" prefWidth="300.0">
+      <TableView layoutX="279.0" layoutY="38.0" prefHeight="302.0" prefWidth="453.0">
         <columns>
           <TableColumn prefWidth="75.0" text="ID" />
           <TableColumn prefWidth="75.0" text="Name" />
+            <TableColumn prefWidth="129.0" text="Address" />
+            <TableColumn prefWidth="78.0" text="Postal code" />
+            <TableColumn prefWidth="93.0" text="Phone Number" />
         </columns>
       </TableView>
       <TextField layoutX="117.0" layoutY="102.0" />
@@ -21,10 +25,14 @@
       <TextField layoutX="117.0" layoutY="164.0" />
       <TextField layoutX="117.0" layoutY="196.0" />
       <TextField layoutX="117.0" layoutY="232.0" />
-      <Button layoutX="254.0" layoutY="350.0" mnemonicParsing="false" text="Add Customer" />
-      <Button layoutX="362.0" layoutY="350.0" mnemonicParsing="false" text="Modify Customer" />
-      <Button layoutX="481.0" layoutY="350.0" mnemonicParsing="false" text="Delete Customer" />
-      <Button fx:id="returnButton" layoutX="348.0" layoutY="391.0" mnemonicParsing="false" onAction="#returnToMainScreenAction" text="Return To Main Screen" />
-      <Label layoutX="103.0" layoutY="21.0" text="Customer Records" />
+      <Button layoutX="302.0" layoutY="350.0" mnemonicParsing="false" text="Add Customer" />
+      <Button layoutX="450.0" layoutY="350.0" mnemonicParsing="false" text="Modify Customer" />
+      <Button layoutX="609.0" layoutY="350.0" mnemonicParsing="false" text="Delete Customer" />
+      <Button fx:id="returnButton" layoutX="436.0" layoutY="395.0" mnemonicParsing="false" onAction="#returnToMainScreenAction" text="Return To Main Screen" />
+      <Label layoutX="103.0" layoutY="21.0" text="Customer Records">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <TextField layoutX="505.0" layoutY="9.0" prefHeight="25.0" prefWidth="188.0" promptText="Search Customer by ID or Name" />
    </children>
 </AnchorPane>
