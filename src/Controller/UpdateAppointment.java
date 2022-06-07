@@ -13,7 +13,7 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class ScheduleAppointment implements Initializable {
+public class UpdateAppointment implements Initializable {
     public Button ReturnToAppointmentScreenId;
     public Button returnToMainScreenId;
 
@@ -21,13 +21,13 @@ public class ScheduleAppointment implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
-/**Navigation to return to Appointment Screen*/
+
     public void ReturnToAppointmentScreenBtn(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/appointmentScreen.fxml")));
         Stage window = (Stage) ReturnToAppointmentScreenId.getScene().getWindow();
         window.setScene(new Scene(root, 800,500));
     }
-/**Navigation to return to Main Menu*/
+
     public void returnToMainScreenBtn(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/MainScreen.fxml")));
         Stage window = (Stage) returnToMainScreenId.getScene().getWindow();

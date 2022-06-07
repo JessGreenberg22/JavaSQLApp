@@ -16,6 +16,7 @@ import java.util.ResourceBundle;
 public class AppointmentScreen implements Initializable {
     public Button returnbtnID;
     public Button scheduleAppointmentId;
+    public Button updateAppointmetnId;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -37,4 +38,9 @@ public class AppointmentScreen implements Initializable {
     }
 
 
+    public void UpdateApptBtn(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/updateAppointment.fxml")));
+        Stage window = (Stage) updateAppointmetnId.getScene().getWindow();
+        window.setScene(new Scene(root, 640,520));
+    }
 }

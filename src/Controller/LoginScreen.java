@@ -77,7 +77,7 @@ String logInErrorTitle = "Log-In Failed";
 
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/MainScreen.fxml")));
         Stage window = (Stage) LogInButton.getScene().getWindow();
-        window.setScene(new Scene(root, 600,400));
+        window.setScene(new Scene(root, 800,500));
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
