@@ -2,26 +2,26 @@ package model;
 /** user Model
  * @Author Jessica Greenberg Student ID 001462404
  */
-public class user
+public class User
 {
     private Integer userId;
-    private String userName;
+    private String username;
     private String password;
 
 /**class Constructor*/
-public user(Integer userId,String password)
+public User(Integer userId, String password)
 {
     this.userId = userId;
     this.password = password;
 
 }
-public user(String userName,String password)
+public User(String username, String password)
 {
-    this.userName = userName;
+    this.username = username;
     this.password = password;
 }
 
-    public user(int userId, String userName, String userPassword) {
+    public User(int userId, String userName, String userPassword) {
     }
 
 
@@ -29,8 +29,8 @@ public user(String userName,String password)
 public int getUserId()
 { return userId; }
 
-public String getUserName()
-{ return userName; }
+public String getUsername()
+{ return username; }
 
 public String getPassword()
 { return password; }
@@ -39,8 +39,8 @@ public String getPassword()
     public void setUserId(int userId)
     {this.userId = userId;}
 
-    public void setUserName(String userName)
-    {this.userName = userName;}
+    public void setUsername(String username)
+    {this.username = username;}
 
     public void setPassword(String password)
     {this.password = password;}

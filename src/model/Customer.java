@@ -6,7 +6,7 @@ package model;
 import java.sql.Timestamp;
 
 /**customer Object class*/
-public class customer
+public class Customer
 {
     private int customerId;
     private String customerName;
@@ -18,7 +18,7 @@ public class customer
 
 /** class Constructor for customer */
 
-public customer (int customerId, String customerName, String address, String postalCode, String phone, int divisionId)
+public Customer(int customerId, String customerName, String address, String postalCode, String phone, int divisionId)
 {
     this.customerId = customerId;
     this.customerName = customerName;

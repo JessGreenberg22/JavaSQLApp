@@ -24,6 +24,6 @@ public class CustomerRecords implements Initializable {
     public void returnToMainScreenAction(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/MainScreen.fxml")));
         Stage window = (Stage) returnButton.getScene().getWindow();
-        window.setScene(new Scene(root, 800,500));
+        window.setScene(new Scene(root, 800,555));
     }
 }

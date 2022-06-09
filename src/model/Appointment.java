@@ -7,7 +7,7 @@ import java.sql.Timestamp;
  */
 
 /**Appointment Object Class*/
-public class Appointments {
+public class Appointment {
     private int appointmentId;
     private String title;
     private String description;
@@ -21,8 +21,8 @@ public class Appointments {
 
     /**Constructor for Appointments*/
 
-    public Appointments (int appointmentId, String title, String description, String location, String type, Timestamp startDateTime,
-                             Timestamp endDateTime, int customerId, int userId, int contactId)
+    public Appointment(int appointmentId, String title, String description, String location, String type, Timestamp startDateTime,
+                       Timestamp endDateTime, int customerId, int userId, int contactId)
     {
         this.appointmentId = appointmentId;
         this.title = title;

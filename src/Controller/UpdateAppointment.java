@@ -21,16 +21,16 @@ public class UpdateAppointment implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
-
+/*Navigation to Appointment Screen*/
     public void ReturnToAppointmentScreenBtn(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/appointmentScreen.fxml")));
         Stage window = (Stage) ReturnToAppointmentScreenId.getScene().getWindow();
         window.setScene(new Scene(root, 800,500));
     }
-
+/*Navifation to MainScreen*/
     public void returnToMainScreenBtn(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/MainScreen.fxml")));
         Stage window = (Stage) returnToMainScreenId.getScene().getWindow();
-        window.setScene(new Scene(root, 600,400));
+        window.setScene(new Scene(root, 800,555));
     }
 }

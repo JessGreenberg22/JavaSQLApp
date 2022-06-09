@@ -1,12 +1,12 @@
 package model;
 
-public class divisions {
+public class Division {
 
     private int divisionId;
     private int countryId;
     private String division;
 
-    public divisions(int divisionId, String division) {
+    public Division(int divisionId, String division) {
         this.divisionId = divisionId;
         this.countryId = countryId;
         this.division = division;

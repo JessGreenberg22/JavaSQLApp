@@ -28,15 +28,12 @@ public class LoginScreen implements Initializable {
     public TextField userIdLabel;
     public TextField passwordLabel;
 
-    public void initialize(){
-        setLocation();
-    }
 /**retrieves users zoneID and sets User location label on Login Screen
  * Based on users Zone Id the language will be set to users locale**/
 public void setLocation(){
     ZoneId currentLocation = ZoneId.systemDefault();
     userLocationLabel.setText("User Location: " + currentLocation);
-    Locale French = new Locale("fr","FR");
+    /*Locale French = new Locale("fr","FR");
     ResourceBundle lf = ResourceBundle.getBundle("Controller/Nat",Locale.FRENCH);
 
     if(Locale.getDefault().getLanguage().equals("fr"))
@@ -66,7 +63,7 @@ public void setLocation(){
         logInErrorMessage = lf.getString("Incorrect user Id or Password").replaceAll("","");
         logInErrorTitle = lf.getString("Log-In, Failed").replaceAll("","");
 
-    }
+    }*/
 }
 
 String logInErrorMessage ="Incorrect user Id or Password";
@@ -82,7 +79,7 @@ String logInErrorTitle = "Log-In Failed";
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-
+       setLocation();
 
 
 

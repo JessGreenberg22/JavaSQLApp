@@ -28,7 +28,7 @@ public class AppointmentScreen implements Initializable {
     {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/MainScreen.fxml")));
         Stage window = (Stage) returnbtnID.getScene().getWindow();
-        window.setScene(new Scene(root, 600,400));
+        window.setScene(new Scene(root, 800,555));
     }
     /**Navigate to the Schedule Appointment Screen*/
     public void scheduleAppointment(ActionEvent actionEvent) throws IOException {

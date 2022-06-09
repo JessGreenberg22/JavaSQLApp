@@ -1,5 +1,6 @@
 package Controller;
 
+import dao.DBAppointments;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -9,7 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
-import model.Appointments;
+import utility.ListManager;
 
 import java.io.IOException;
 import java.net.URL;
@@ -46,10 +47,9 @@ public class MainScreen implements Initializable{
     public void appointmentBtnAction(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/appointmentScreen.fxml")));
         Stage window = (Stage) appointmentBtnId.getScene().getWindow();
-        window.setScene(new Scene(root, 500,400));
+        window.setScene(new Scene(root, 600,500));
     } @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-/*This sets up the AppointmentTable on the Mainscreen*/
-        apptTable.setItems(Appointments.getAllAppointments)
+
     }
 }
