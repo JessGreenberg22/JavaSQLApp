@@ -33,17 +33,17 @@ public class LoginScreen implements Initializable {
 public void setLocation(){
     ZoneId currentLocation = ZoneId.systemDefault();
     userLocationLabel.setText("User Location: " + currentLocation);
-    /*Locale French = new Locale("fr","FR");
-    ResourceBundle lf = ResourceBundle.getBundle("Controller/Nat",Locale.FRENCH);
+    Locale French = new Locale("fr","FR");
+    ResourceBundle lf = ResourceBundle.getBundle("login_fr",Locale.getDefault());
 
     if(Locale.getDefault().getLanguage().equals("fr"))
     {
         Locale.setDefault(French);
         welcomeLabel.setText((lf.getString("Welcome!")).replaceAll("",""));
-        enterUserIdLabel.setText((lf.getString("Please enter your user Id and password")).replaceAll("",""));
-        userIdLabel.setPromptText(((lf.getString("User Id")).replaceAll("","")));
+        enterUserIdLabel.setText((lf.getString("enter")).replaceAll("",""));
+        userIdLabel.setPromptText(((lf.getString("UserId")).replaceAll("","")));
         passwordLabel.setPromptText((lf.getString("Password")).replaceAll("",""));
-        LogInButton.setText(lf.getString("Log in"));
+        LogInButton.setText(lf.getString("Login"));
 
         int indexOfSeperation = (currentLocation.toString()).indexOf("/");
         String countryToPrint = (currentLocation.toString()).substring(0,indexOfSeperation);
@@ -63,7 +63,7 @@ public void setLocation(){
         logInErrorMessage = lf.getString("Incorrect user Id or Password").replaceAll("","");
         logInErrorTitle = lf.getString("Log-In, Failed").replaceAll("","");
 
-    }*/
+    }
 }
 
 String logInErrorMessage ="Incorrect user Id or Password";

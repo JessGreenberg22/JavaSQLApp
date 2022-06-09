@@ -21,17 +21,6 @@ public class User implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle ) {
-        userId.setcellFactoryProperty(new PropertyValueFactory<>("userId"));
 
-        username.setcellFactoryProperty(new PropertyValueFactory<>("username"));
-
-        password.setcellFactoryProperty(new PropertyValueFactory<>("password"));
-
-        try {
-            User.addAll(DBUser.getAllUsers());
-        } catch (SQLException ex) {
-            Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE, null,ex);
-        }
-userTable.setItems(Users);
     }
 }
