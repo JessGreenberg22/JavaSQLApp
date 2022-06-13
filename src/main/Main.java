@@ -1,13 +1,16 @@
 package main;
 
 
+import dao.JDBC;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.Locale;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
 /** Main Class Application
  * @Author Jessica Greenberg Student ID 001462404
@@ -28,6 +31,20 @@ Opens and closes connections to Database
         primaryStage.setScene(new Scene(root, 300, 400));
         primaryStage.show();
     }
-    public static void main(String[] args)
+    public static void main(String[] args){
+            JDBC.openConnection();
     {launch(args); }
+
+        Locale france = new Locale("fr","FR");
+
+        try{
+            ResourceBundle rb = ResourceBundle.getBundle("login_fr",Locale.getDefault());
+            if(Locale.getDefault().getLanguage().equals("en") || Locale.getDefault().getLanguage().equals("fr"))
+                System.out.println(rb.getString("intro"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        JDBC.closeConnection();
+    }
 }

@@ -27,12 +27,12 @@
       <TextField layoutX="132.0" layoutY="150.0" />
       <TextField layoutX="132.0" layoutY="180.0" />
       <TextField layoutX="132.0" layoutY="210.0" />
-      <TextField layoutX="132.0" layoutY="240.0" />
-      <TextField layoutX="132.0" layoutY="270.0" />
-      <TextField layoutX="132.0" layoutY="300.0" />
-      <TextField layoutX="132.0" layoutY="330.0" />
+      <TextField editable="false" layoutX="132.0" layoutY="300.0" />
+      <TextField editable="false" layoutX="132.0" layoutY="330.0" />
       <Button layoutX="51.0" layoutY="406.0" mnemonicParsing="false" text="Schedule Appointment" />
       <Button fx:id="ReturnToAppointmentScreenId" layoutX="249.0" layoutY="406.0" mnemonicParsing="false" onAction="#ReturnToAppointmentScreenBtn" text="Return to Appointments Screen" />
       <Button fx:id="returnToMainScreenId" layoutX="498.0" layoutY="406.0" mnemonicParsing="false" onAction="#returnToMainScreenBtn" text="Return to Main Menu" />
+      <DatePicker layoutX="132.0" layoutY="236.0" />
+      <DatePicker layoutX="132.0" layoutY="266.0" />
    </children>
 </AnchorPane>

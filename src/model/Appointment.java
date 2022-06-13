@@ -1,6 +1,5 @@
 package model;
 
-import java.sql.Time;
 import java.sql.Timestamp;
 /** Appointments Model
  * @Author Jessica Greenberg Student ID 001462404
