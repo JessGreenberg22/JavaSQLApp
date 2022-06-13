@@ -42,6 +42,7 @@ public abstract class JDBC {
 public static Connection getConnection() {
         return connection;
         }
+
     /*Method Closing Connections to the Referenced Database*/
 public static void closeConnection() {
     try {

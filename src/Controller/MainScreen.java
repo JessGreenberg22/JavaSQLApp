@@ -6,36 +6,20 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import utility.ListManager;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class MainScreen implements Initializable{
 
     public Button custRecordsID;
     public Button appointmentBtnId;
-    
-    /**Appointment Table*/
-    public TableView apptTable;
-    public TableColumn ApptIdColumn;
-    public TableColumn TitleColumn;
-    public TableColumn descriptionColumn;
-    public TableColumn locationColumn;
-    public TableColumn contactColumn;
-    public TableColumn typeColumn;
-    public TableColumn startDateAndTimeCol;
-    public TableColumn endDateAndTimeCol;
-    public TableColumn customerIdCol;
-    public TableColumn userIdCol;
-
-
 
     /**Navigation to customer Records*/
     public void custRecordsAction(ActionEvent actionEvent) throws IOException {
@@ -48,8 +32,25 @@ public class MainScreen implements Initializable{
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/appointmentScreen.fxml")));
         Stage window = (Stage) appointmentBtnId.getScene().getWindow();
         window.setScene(new Scene(root, 600,500));
-    } @Override
+    }
+    /**Exit The Application, when you choose to exit the application a confirmation prompt will appear so that you can verify you want to exit*/
+    public void exit(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirm");
+        alert.setHeaderText("Are you Sure?");
+        alert.setContentText("Are you sure you want to exit the program?");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            System.exit(0);
+        }
+    }
+
+
+    @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
+
+
 }

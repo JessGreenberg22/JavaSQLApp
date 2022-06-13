@@ -13,6 +13,7 @@ public class ListManager {
     /*List of all Appointments*/
     public static ObservableList<Appointment> allAppointments = FXCollections.observableArrayList();
 
+
     /*list of all Users*/
     public static ObservableList<User> allUsers = FXCollections.observableArrayList();
 }

@@ -29,7 +29,7 @@ public class LoginScreen implements Initializable {
     public TextField passwordLabel;
 
 /**retrieves users zoneID and sets User location label on Login Screen
- * Based on users Zone Id the language will be set to users locale**/
+ * Based on users Zone Id the language will be set to users locale (either French of English)**/
 public void setLocation(){
     ZoneId currentLocation = ZoneId.systemDefault();
     userLocationLabel.setText("User Location: " + currentLocation);
@@ -58,10 +58,10 @@ public void setLocation(){
         }
         else
         {
-            userLocationLabel.setText(lf.getString("Users location").replaceAll("","") + ": " + currentLocation);
+            userLocationLabel.setText(lf.getString("location").replaceAll("","") + ": " + currentLocation);
     }
-        logInErrorMessage = lf.getString("Incorrect user Id or Password").replaceAll("","");
-        logInErrorTitle = lf.getString("Log-In, Failed").replaceAll("","");
+        logInErrorMessage = lf.getString("ErrorMessage").replaceAll("","");
+        logInErrorTitle = lf.getString("FailedLoginAttempt").replaceAll("","");
 
     }
 }

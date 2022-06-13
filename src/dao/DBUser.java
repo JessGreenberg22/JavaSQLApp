@@ -2,6 +2,7 @@ package dao;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import model.Appointment;
 import model.User;
 
 import java.sql.PreparedStatement;
@@ -22,5 +23,28 @@ public class DBUser {
             userObservableList.add(user);
         }return userObservableList;
     }
+    public static User getUserId(String username) {
 
+        User user = null;
+
+        try {
+
+            String sql = "SELECT * from users where User_Name = ?";
+
+            PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
+            ps.setString(1, username);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                int userID = rs.getInt("user_ID");
+                String userName = rs.getString("User_Name");
+                String password = rs.getString("password");
+                user = new User(userID, userName, password);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return user;
+    }
 }
