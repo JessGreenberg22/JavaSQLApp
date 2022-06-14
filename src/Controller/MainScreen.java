@@ -31,7 +31,7 @@ public class MainScreen implements Initializable{
     public void appointmentBtnAction(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/appointmentScreen.fxml")));
         Stage window = (Stage) appointmentBtnId.getScene().getWindow();
-        window.setScene(new Scene(root, 600,500));
+        window.setScene(new Scene(root, 789,366));
     }
     /**Exit The Application, when you choose to exit the application a confirmation prompt will appear so that you can verify you want to exit*/
     public void exit(ActionEvent actionEvent) {
