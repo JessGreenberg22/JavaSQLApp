@@ -12,7 +12,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
-
+/** Schedule Appointment Controller
+ * @Author Jessica Greenberg Student ID 001462404
+ */
 public class ScheduleAppointment implements Initializable {
     public Button ReturnToAppointmentScreenId;
     public Button returnToMainScreenId;

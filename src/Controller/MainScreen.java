@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import utility.ListManager;
 
@@ -15,11 +16,26 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.ResourceBundle;
-
+/** Main Screen Controller
+ * @Author Jessica Greenberg Student ID 001462404
+ */
 public class MainScreen implements Initializable{
 
     public Button custRecordsID;
     public Button appointmentBtnId;
+    /*AppointmentTable*/
+    public TableView appointmentTable;
+    public TableColumn appointmentIdCol;
+    public TableColumn appTitleCol;
+    public TableColumn appDescriptionCol;
+    public TableColumn appLocationCol;
+    public TableColumn appTypeCol;
+    public TableColumn appContactCol;
+    public TableColumn appStartCol;
+    public TableColumn appEndCol;
+    public TableColumn appCustIdCol;
+    public TableColumn appUserIdCol;
+
 
     /**Navigation to customer Records*/
     public void custRecordsAction(ActionEvent actionEvent) throws IOException {
@@ -49,7 +65,17 @@ public class MainScreen implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        appointmentTable.setItems(DBAppointments.getAllAppointments());
+        appointmentIdCol.setCellValueFactory(new PropertyValueFactory<>("appointmentId"));
+        appTitleCol.setCellValueFactory(new PropertyValueFactory<>("title"));
+        appDescriptionCol.setCellValueFactory(new PropertyValueFactory<>("description"));
+        appLocationCol.setCellValueFactory(new PropertyValueFactory<>("location"));
+        appTypeCol.setCellValueFactory(new PropertyValueFactory<>("type"));
+        appContactCol.setCellValueFactory(new PropertyValueFactory<>("contactId"));
+        appStartCol.setCellValueFactory(new PropertyValueFactory<>("startDateTime"));
+        appEndCol.setCellValueFactory(new PropertyValueFactory<>("endDateTime"));
+        appCustIdCol.setCellValueFactory(new PropertyValueFactory<>("customerId"));
+        appUserIdCol.setCellValueFactory(new PropertyValueFactory<>("userId"));
     }
 
 

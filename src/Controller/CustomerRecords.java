@@ -12,7 +12,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
-
+/** Customer Records Controller
+ * @Author Jessica Greenberg Student ID 001462404
+ */
 public class CustomerRecords implements Initializable {
     public Button returnButton;
 

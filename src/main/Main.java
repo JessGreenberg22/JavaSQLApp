@@ -40,7 +40,7 @@ Opens and closes connections to Database
         try{
             ResourceBundle rb = ResourceBundle.getBundle("login_fr",Locale.getDefault());
             if(Locale.getDefault().getLanguage().equals("en") || Locale.getDefault().getLanguage().equals("fr"))
-                System.out.println(rb.getString("intro"));
+                System.out.println(rb.getString("Login Screen successful"));
         } catch (Exception e) {
             e.printStackTrace();
         }

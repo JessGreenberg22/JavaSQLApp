@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="363.0" prefWidth="812.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainScreen">
    <children>
@@ -22,5 +23,10 @@
       <Button fx:id="custRecordsID" layoutX="254.0" layoutY="291.0" mnemonicParsing="false" onAction="#custRecordsAction" text="Customer Records" />
       <Button fx:id="appointmentBtnId" layoutX="49.0" layoutY="291.0" mnemonicParsing="false" onAction="#appointmentBtnAction" text="Appointment Management" />
       <Button fx:id="exit" layoutX="406.0" layoutY="291.0" mnemonicParsing="false" onAction="#exit" text="Exit" />
+      <Label layoutX="234.0" layoutY="14.0" text="Upcoming Appointments">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

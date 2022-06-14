@@ -17,7 +17,9 @@ import java.time.ZoneId;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.ResourceBundle;
-
+/** Login Screen Controller
+ * @Author Jessica Greenberg Student ID 001462404
+ */
 public class LoginScreen implements Initializable {
 
 
