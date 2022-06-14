@@ -78,7 +78,11 @@ public class DBAppointments {
         return overlapExists;
     }
 
-    /**method to insert new appointments into database*/
+    /**
+     * method to insert new appointments into database
+     * @param appointment
+     * @throws SQLException
+     */
     public static void addAppointment (Appointment appointment) throws SQLException {
 
         String sql = "INSERT INTO appointments (Title, Description, Location, Type, Start, End, Customer_ID, User_ID, Contact_ID, create_date, created_by,last_update, last_updated_by) VALUES (?,?,?,?,?,?,?,?,?,?,now(),?,now())";

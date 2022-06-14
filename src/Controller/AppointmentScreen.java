@@ -48,8 +48,8 @@ public class AppointmentScreen implements Initializable {
         appEndCol.setCellValueFactory(new PropertyValueFactory<>("End"));
         appCustIdCol.setCellValueFactory(new PropertyValueFactory<>("Cust Id"));
         appUserIdCol.setCellValueFactory(new PropertyValueFactory<>("User Id"));
-
     }
+
     /** Navigate to the MainScreen */
     public void returnOnAction(ActionEvent actionEvent) throws IOException
     {
