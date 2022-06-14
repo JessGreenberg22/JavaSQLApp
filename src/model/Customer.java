@@ -10,6 +10,7 @@ public class Customer
 {
     private int customerId;
     private String customerName;
+    private String country;
     private String address;
     private String postalCode;
     private String phone;
@@ -47,6 +48,8 @@ public Customer(int customerId, String customerName, String address, String post
     public int getDivisionId()
     {return divisionId;}
 
+    public String getCountry()
+    {return country;}
     /**Setters*/
     public void setCustomerId(int customerId)
     {this.customerId = customerId;}
@@ -65,4 +68,8 @@ public Customer(int customerId, String customerName, String address, String post
 
     public void setDivisionId(int divisionId)
     {this.divisionId = divisionId;}
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
 }

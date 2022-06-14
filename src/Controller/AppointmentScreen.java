@@ -38,16 +38,16 @@ public class AppointmentScreen implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         appointmentTable.setItems(DBAppointments.getAllAppointments());
-        appointmentIdCol.setCellValueFactory(new PropertyValueFactory<>("APT ID"));
-        appTitleCol.setCellValueFactory(new PropertyValueFactory<>("Title"));
-        appDescriptionCol.setCellValueFactory(new PropertyValueFactory<>("Description"));
-        appLocationCol.setCellValueFactory(new PropertyValueFactory<>("Location"));
-        appTypeCol.setCellValueFactory(new PropertyValueFactory<>("Type"));
-        appContactCol.setCellValueFactory(new PropertyValueFactory<>("Contact"));
-        appStartCol.setCellValueFactory(new PropertyValueFactory<>("Start"));
-        appEndCol.setCellValueFactory(new PropertyValueFactory<>("End"));
-        appCustIdCol.setCellValueFactory(new PropertyValueFactory<>("Cust Id"));
-        appUserIdCol.setCellValueFactory(new PropertyValueFactory<>("User Id"));
+        appointmentIdCol.setCellValueFactory(new PropertyValueFactory<>("appointmentId"));
+        appTitleCol.setCellValueFactory(new PropertyValueFactory<>("title"));
+        appDescriptionCol.setCellValueFactory(new PropertyValueFactory<>("description"));
+        appLocationCol.setCellValueFactory(new PropertyValueFactory<>("location"));
+        appTypeCol.setCellValueFactory(new PropertyValueFactory<>("type"));
+        appContactCol.setCellValueFactory(new PropertyValueFactory<>("contactId"));
+        appStartCol.setCellValueFactory(new PropertyValueFactory<>("startDateTime"));
+        appEndCol.setCellValueFactory(new PropertyValueFactory<>("endDateTime"));
+        appCustIdCol.setCellValueFactory(new PropertyValueFactory<>("customerId"));
+        appUserIdCol.setCellValueFactory(new PropertyValueFactory<>("userId"));
     }
 
     /** Navigate to the MainScreen */

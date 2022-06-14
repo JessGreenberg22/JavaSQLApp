@@ -22,16 +22,18 @@ public class DBAppointments {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                int appointmentId = rs.getInt("APT ID");
+                int appointmentId = rs.getInt("Appointment_ID");
                 String title = rs.getString("Title");
                 String description = rs.getString("Description");
                 String location = rs.getString("Location");
-                String type = rs.getString("Type");
-                Timestamp startDateTime = rs.getTimestamp("Start");
-                Timestamp endDateTime = rs.getTimestamp("End");
-                int customerId = rs.getInt("Cust Id");
-                int userId = rs.getInt("User Id");
-                int contactId = rs.getInt("contact Id");
+                String type = rs.getString("type");
+                Timestamp startDateTime = rs.getTimestamp("start");
+                //LocalDateTime start = appointmentStart.toLocalDateTime();
+                Timestamp endDateTime = rs.getTimestamp("end");
+                //LocalDateTime end = appointmentEnd.toLocalDateTime();
+                int customerId = rs.getInt("Customer_ID");
+                int userId = rs.getInt("User_ID");
+                int contactId = rs.getInt("contact_ID");
                 Appointment a = new Appointment(appointmentId,title,description,location,type,startDateTime,endDateTime,customerId,userId,contactId);
                 allAppointments.add(a);
 
@@ -78,11 +80,7 @@ public class DBAppointments {
         return overlapExists;
     }
 
-    /**
-     * method to insert new appointments into database
-     * @param appointment
-     * @throws SQLException
-     */
+    /***method to insert new appointments into database*/
     public static void addAppointment (Appointment appointment) throws SQLException {
 
         String sql = "INSERT INTO appointments (Title, Description, Location, Type, Start, End, Customer_ID, User_ID, Contact_ID, create_date, created_by,last_update, last_updated_by) VALUES (?,?,?,?,?,?,?,?,?,?,now(),?,now())";
@@ -107,10 +105,7 @@ public class DBAppointments {
         }
     }
 
-    /**
-     * method to modify appointment and update database
-     * @param appointment
-     */
+    /***method to modify appointment and update database*/
     public static void modifyAppointment(Appointment appointment) {
 
         try {
