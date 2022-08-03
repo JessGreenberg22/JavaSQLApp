@@ -4,72 +4,138 @@ package model;
  */
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 /**customer Object class*/
-public class Customer
-{
-    private int customerId;
-    private String customerName;
-    private String country;
-    private String address;
-    private String postalCode;
-    private String phone;
-    private int divisionId;
+public class Customer{
+        private int customerID;
+        private String name;
+        private String address;
+        private int divisionID;
+        private String country;
+        private String division;
+        private String postalCode;
+        private String phoneNumber;
+        private LocalDateTime createDate;
+        private String createdBy;
+        private LocalDateTime lastUpdate;
+        private String lastUpdatedBy;
+
+        /**
+         * constructor for new instance of a product
+         */
+        public Customer (int customerID, String name, String address, int divisionID, String postalCode, String phoneNumber) {
+            this.customerID = customerID;
+            this.name = name;
+            this.address = address;
+            this.divisionID = divisionID;
+            this.postalCode = postalCode;
+            this.phoneNumber = phoneNumber;
+        }
 
 
-/** class Constructor for customer */
+        /**
+         * defines the getters for the Customer class
+         */
 
-public Customer(int customerId, String customerName, String address, String postalCode, String phone, int divisionId)
-{
-    this.customerId = customerId;
-    this.customerName = customerName;
-    this.address = address;
-    this.postalCode = postalCode;
-    this.phone = phone;
-    this.divisionId = divisionId;
-}
+        public int getId(){
+            return customerID;
+        }
 
-    /**Getters*/
-    public int getCustomerId()
-    {return customerId;}
+        public String getName(){
+            return name;
+        }
 
-    public String getCustomerName()
-    {return customerName;}
+        public String getAddress(){
+            return address;
+        }
 
-    public String getAddress()
-    {return address;}
+        public String getCountry(){ return country; }
 
-    public String getPostalCode()
-    {return postalCode;}
+        public int getDivisionID(){
+            return divisionID;
+        }
 
-    public String getPhone()
-    {return phone;}
+        public String getDivision(){   return division; }
 
-    public int getDivisionId()
-    {return divisionId;}
+        public String getPostalCode(){
+            return postalCode;
+        }
 
-    public String getCountry()
-    {return country;}
-    /**Setters*/
-    public void setCustomerId(int customerId)
-    {this.customerId = customerId;}
+        public String getPhoneNumber(){
+            return phoneNumber;
+        }
 
-    public void setCustomerName(String customerName)
-    {this.customerName = customerName;}
+        public LocalDateTime getCreateDate(){
+            return createDate;
+        }
 
-    public void setAddress(String address)
-    {this.address = address;}
+        public String getCreatedBy(){
+            return createdBy;
+        }
 
-    public void setPostalCode(String postalCode)
-    {this.postalCode = postalCode;}
+        public LocalDateTime getLastUpdate(){
+            return lastUpdate;
+        }
 
-    public void setPhone(String phone)
-    {this.phone = phone;}
+        public String getLastUpdatedBy(){
+            return lastUpdatedBy;
+        }
 
-    public void setDivisionId(int divisionId)
-    {this.divisionId = divisionId;}
+        /**
+         * defines the setters for the Customer class
+         */
+        public void setCustomerID(int customerID){
+            this.customerID = customerID;
+        }
 
-    public void setCountry(String country) {
-        this.country = country;
-    }
+        public void setName(String name){
+            this.name = name;
+        }
+
+        public void setAddress(String address){
+            this.address = address;
+        }
+
+        public void setDivisionID(int divisionID){
+            this.divisionID = divisionID;
+        }
+
+        public void setPostalCode (String postalCode){
+            this.postalCode = postalCode;
+        }
+
+        public void setPhoneNumber ( String phoneNumber){
+            this.phoneNumber = phoneNumber;
+        }
+
+        public void setCreateDate(LocalDateTime createDate){
+            this.createDate = createDate;
+        }
+
+        public void setCreatedBy(String createdBy){
+            this.createdBy = createdBy;
+        }
+
+        public void setLastUpdate(LocalDateTime lastUpdate){
+            this.lastUpdate = lastUpdate;
+        }
+
+        public void setLastUpdatedBy(String lastUpdatedBy){
+            this.lastUpdatedBy = lastUpdatedBy;
+        }
+
+        public void setCountry ( String country){
+            this.country = country;
+        }
+
+        public void setDivision ( String division){
+            this.division = division;
+        }
+
+        @Override
+        public String toString() {
+
+            return (Integer.toString(customerID));
+        }
 }

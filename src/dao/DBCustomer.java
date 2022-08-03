@@ -9,7 +9,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class DBCustomer { public static ObservableList<Customer> getAllCustomers() {
+public class DBCustomer { /**
+ * method to add customer data to tableview on CustomerScreen
+ *
+ * @return
+ */
+public static ObservableList<Customer> getAllCustomers() {
 
     ObservableList<Customer> customerList = FXCollections.observableArrayList();
 
@@ -34,8 +39,8 @@ public class DBCustomer { public static ObservableList<Customer> getAllCustomers
             String division = rs.getString("Division");
             String postalCode = rs.getString("Postal_Code");
             String phoneNumber = rs.getString("Phone");
-            Customer c = new Customer(customerID, name, address, postalCode, phoneNumber,divisionID);
-            c.setDivisionId(Integer.parseInt(division));
+            Customer c = new Customer(customerID, name, address,divisionID, postalCode, phoneNumber);
+            c.setDivision(division);
             c.setCountry(country);
             customerList.add(c);
         }
@@ -56,11 +61,11 @@ public class DBCustomer { public static ObservableList<Customer> getAllCustomers
 
             String sql = "INSERT INTO customers (Customer_Name, Address, Postal_Code,Phone, Division_ID) VALUES (?,?,?,?,?)";
             PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
-            ps.setString(1, customer.getCustomerName());
+            ps.setString(1, customer.getName());
             ps.setString(2, customer.getAddress());
             ps.setString(3,customer.getPostalCode());
-            ps.setString(4,customer.getPhone());
-            ps.setInt(5, customer.getDivisionId());
+            ps.setString(4,customer.getPhoneNumber());
+            ps.setInt(5, customer.getDivisionID());
 
             int status = ps.executeUpdate();
 
@@ -79,12 +84,12 @@ public class DBCustomer { public static ObservableList<Customer> getAllCustomers
 
             String sql = "UPDATE customers SET Customer_Name = ?, Address = ?, Postal_Code = ?, Phone = ?, Division_ID = ? Where Customer_ID = ?";
             PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
-            ps.setString(1, customer.getCustomerName());
+            ps.setString(1, customer.getName());
             ps.setString(2, customer.getAddress());
             ps.setString(3,customer.getPostalCode());
-            ps.setString(4,customer.getPhone());
-            ps.setInt(5, customer.getDivisionId());
-            ps.setInt(6, customer.getCustomerId());
+            ps.setString(4,customer.getPhoneNumber());
+            ps.setInt(5, customer.getDivisionID());
+            ps.setInt(6, customer.getId());
 
             int status = ps.executeUpdate();
 
