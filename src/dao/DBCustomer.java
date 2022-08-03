@@ -51,33 +51,27 @@ public static ObservableList<Customer> getAllCustomers() {
     return customerList;
 }
 
-    /**
-     * method to add customer to database
-     * @param customer
-     */
+    /**add customer to database*/
     public static void addCustomer(Customer customer) {
 
         try {
 
             String sql = "INSERT INTO customers (Customer_Name, Address, Postal_Code,Phone, Division_ID) VALUES (?,?,?,?,?)";
-            PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
-            ps.setString(1, customer.getName());
-            ps.setString(2, customer.getAddress());
-            ps.setString(3,customer.getPostalCode());
-            ps.setString(4,customer.getPhoneNumber());
-            ps.setInt(5, customer.getDivisionID());
+            PreparedStatement cust = JDBC.getConnection().prepareStatement(sql);
+            cust.setString(1, customer.getName());
+            cust.setString(2, customer.getAddress());
+            cust.setString(3,customer.getPostalCode());
+            cust.setString(4,customer.getPhoneNumber());
+            cust.setInt(5, customer.getDivisionID());
 
-            int status = ps.executeUpdate();
+            int status = cust.executeUpdate();
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
     }
 
-    /**
-     * method to modify customer in database
-     * @param customer
-     */
+    /**modify customer in database*/
     public static void modifyCustomer(Customer customer) {
 
         try {
@@ -98,10 +92,7 @@ public static ObservableList<Customer> getAllCustomers() {
         }
     }
 
-    /**
-     * method to delete customer in database and associated appointments from database
-     * @param customerId
-     */
+    /**delete customer and associated appointments in database*/
     public static void deleteCustomer(int customerId) {
 
         try {

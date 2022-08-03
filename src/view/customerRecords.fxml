@@ -14,11 +14,10 @@
       <TableView fx:id="customerTable" layoutX="287.0" layoutY="38.0" prefHeight="302.0" prefWidth="453.0">
         <columns>
           <TableColumn fx:id="customerIDCol" prefWidth="44.0" text="ID" />
-          <TableColumn fx:id="customerNameCol" prefWidth="48.0" text="Name" />
-            <TableColumn fx:id="customerAddressCol" prefWidth="62.0" text="Address" />
-            <TableColumn fx:id="customerCountryCol" prefWidth="59.0" text="Country" />
-            <TableColumn fx:id="customerStateCol" minWidth="0.0" prefWidth="54.0" text="State" />
-            <TableColumn fx:id="customerPostalCol" prefWidth="83.0" text="Area Code" />
+          <TableColumn fx:id="customerNameCol" prefWidth="91.0" text="Name" />
+            <TableColumn fx:id="customerAddressCol" prefWidth="81.0" text="Address" />
+            <TableColumn fx:id="customerStateCol" minWidth="0.0" prefWidth="56.0" text="State" />
+            <TableColumn fx:id="customerPostalCol" prefWidth="78.0" text="Area Code" />
             <TableColumn fx:id="customerPhoneCol" prefWidth="102.0" text="Phone Number" />
         </columns>
       </TableView>
@@ -29,7 +28,7 @@
       <TextField layoutX="117.0" layoutY="232.0" />
       <Button layoutX="302.0" layoutY="350.0" mnemonicParsing="false" text="Add Customer" />
       <Button layoutX="450.0" layoutY="350.0" mnemonicParsing="false" text="Modify Customer" />
-      <Button fx:id="deleteButton" layoutX="609.0" layoutY="350.0" mnemonicParsing="false" text="Delete Customer" />
+      <Button fx:id="deleteButton" layoutX="609.0" layoutY="350.0" mnemonicParsing="false" onAction="#deleteCustomer" text="Delete Customer" />
       <Button fx:id="returnButton" layoutX="436.0" layoutY="395.0" mnemonicParsing="false" onAction="#returnToMainScreenAction" text="Return To Main Screen" />
       <Label layoutX="103.0" layoutY="21.0" text="Customer Records">
          <font>
