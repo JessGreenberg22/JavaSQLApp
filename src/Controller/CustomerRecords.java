@@ -1,18 +1,24 @@
 package Controller;
 
+import dao.DBCountry;
 import dao.DBCustomer;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import model.Country;
 import model.Customer;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -20,8 +26,14 @@ import java.util.ResourceBundle;
  * @Author Jessica Greenberg Student ID 001462404
  */
 public class CustomerRecords implements Initializable {
-    public Button returnButton;
-    public Button deleteButton;
+   /*TextField and ComboBox Ids*/
+    public ComboBox stateComboBox;
+    public TextField customerIDFIeld;
+    public TextField customerNameField;
+    public TextField customerAddressField;
+    public TextField postalCodeField;
+    public TextField phoneNumberField;
+
     /**Customer Table*/
     public TableView customerTable;
     public TableColumn customerIDCol;
@@ -31,9 +43,13 @@ public class CustomerRecords implements Initializable {
     public TableColumn customerPostalCol;
     public TableColumn customerPhoneCol;
 
-
+    /*Ids for buttons*/
+    public Button returnButton;
+    public Button deleteButton;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
+
+    /*set Values in the customer Table*/
     {
         customerTable.setItems(DBCustomer.getAllCustomers());
         customerIDCol.setCellValueFactory(new PropertyValueFactory<>("Id"));
@@ -50,7 +66,50 @@ public class CustomerRecords implements Initializable {
         window.setScene(new Scene(root, 800,555));
     }
 
+    /**handler for the state combo box*/
+    public void stateComboBox(ActionEvent actionEvent) throws SQLException {
+        Country selectedCountry = (Country) stateComboBox.getSelectionModel().getSelectedItem();
+        if (selectedCountry != null) {
+            ObservableList Division = DBCountry.getFirstLevelDivision(selectedCountry.getCountryId());
+            stateComboBox.setItems(Division);
+        }
+    }
+    /**Add a customer to the Database*/
+    public void addCustomer(ActionEvent actionEvent) throws IOException {String name = customerNameField.getText();
+        String address = customerAddressField.getText();
+        String division = stateComboBox.getSelectionModel().getSelectedItem().toString();
+        int divisionID = DBCountry.getDivisionId(division);
+        String postalCode = postalCodeField.getText();
+        String phoneNumber = phoneNumberField.getText();
 
+        if(!verifyInput(name) || !verifyInput(address) || !verifyInput(postalCode)|| !verifyInput(phoneNumber)){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning");
+            alert.setContentText("Please enter values for each field");
+            alert.showAndWait();
+            return;
+        }
+
+        Customer newCustomer = new Customer(-1, name, address, divisionID, postalCode, phoneNumber);
+        DBCustomer.addCustomer(newCustomer);
+
+        JOptionPane.showMessageDialog(null, "You have Successfully added a Customer");
+        Parent root = FXMLLoader.load(getClass().getResource("/view/MainScreen.fxml"));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root, 800, 600);
+        stage.setScene(scene);
+        stage.show();
+
+    }
+    /*Validate input data*/
+    public static Boolean verifyInput(String string) {
+        if (string.isEmpty() || string.isBlank()) {
+            return false;
+        } else {
+            return true;
+        }
+
+    }
     /**Delete Customer from Customer Table & all upcoming appointments that customer has in record*/
     public void deleteCustomer(ActionEvent actionEvent) {
         Customer selection = (Customer) customerTable.getSelectionModel().getSelectedItem();

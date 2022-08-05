@@ -1,6 +1,7 @@
 package model;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 /** Appointments Model
  * @Author Jessica Greenberg Student ID 001462404
  */
@@ -12,24 +13,24 @@ public class Appointment {
     private String description;
     private String location;
     private String type;
-    private Timestamp startDateTime;
-    private Timestamp endDateTime;
+    private LocalDateTime start;
+    private LocalDateTime end;
     private int customerId;
     private int userId;
     private int contactId;
 
     /**Constructor for Appointments*/
 
-    public Appointment(int appointmentId, String title, String description, String location, String type, Timestamp startDateTime,
-                       Timestamp endDateTime, int customerId, int userId, int contactId)
+    public Appointment(int appointmentId, String title, String description, String location, String type, LocalDateTime start,
+                       LocalDateTime end, int customerId, int userId, int contactId)
     {
         this.appointmentId = appointmentId;
         this.title = title;
         this.description = description;
         this.location = location;
         this.type = type;
-        this.startDateTime = startDateTime;
-        this.endDateTime = endDateTime;
+        this.start = start;
+        this.end = end;
         this.customerId = customerId;
         this.userId = userId;
         this.contactId = contactId;
@@ -50,11 +51,11 @@ public class Appointment {
     public String getType()
     {return type;}
 
-    public Timestamp getStartDateTime()
-    {return startDateTime;}
+    public LocalDateTime getStart()
+    {return start;}
 
-    public Timestamp getEndDateTime()
-    {return endDateTime;}
+    public LocalDateTime getEnd()
+    {return end;}
 
     public int getCustomerId()
     {return customerId;}
@@ -81,11 +82,11 @@ public class Appointment {
     public void setType(String type)
     {this.type = type;}
 
-    public void setStartDateTime(Timestamp startDateTime)
-    {this.startDateTime = startDateTime;}
+    public void setStart(LocalDateTime start)
+    {this.start = start;}
 
-    public void setEndDateTime(Timestamp endDateTime)
-    {this.endDateTime = endDateTime;}
+    public void setEndDateTime(LocalDateTime end)
+    {this.end = end;}
 
     public void setCustomerId(int customerId)
     {this.customerId = customerId;}

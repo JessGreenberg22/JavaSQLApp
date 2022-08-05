@@ -38,11 +38,7 @@ public class DBCountry {
 
     }
 
-    /**
-     * method to get divisions using countryID
-     * @param countryID
-     * @return
-     */
+    /**method to get divisions using countryID*/
     public static ObservableList<String> getFirstLevelDivision(int countryID){
 
         ObservableList<String> clist = FXCollections.observableArrayList();
@@ -68,11 +64,7 @@ public class DBCountry {
 
     }
 
-    /**
-     * method to get divisionID
-     * @param division
-     * @return
-     */
+    /**method to get divisionID*/
     public static int getDivisionId(String division){
 
         int divisionId = -1;

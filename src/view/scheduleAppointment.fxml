@@ -19,22 +19,22 @@
       <Label layoutX="20.0" layoutY="210.0" text="Type" />
       <Label layoutX="20.0" layoutY="240.0" text="Start date and time" />
       <Label layoutX="20.0" layoutY="270.0" text="End date and time" />
-      <Label layoutX="20.0" layoutY="300.0" text="Customer ID" />
-      <Label layoutX="20.0" layoutY="330.0" text="User ID" />
+      <Label layoutX="18.0" layoutY="304.0" text="Customer ID" />
+      <Label layoutX="22.0" layoutY="339.0" text="User ID" />
       <TextField editable="false" layoutX="132.0" layoutY="60.0" />
-      <TextField layoutX="132.0" layoutY="90.0" />
-      <TextField layoutX="132.0" layoutY="120.0" />
-      <TextField editable="false" layoutX="132.0" layoutY="300.0" />
-      <TextField editable="false" layoutX="132.0" layoutY="330.0" />
-      <Button layoutX="51.0" layoutY="406.0" mnemonicParsing="false" text="Schedule Appointment" />
+      <TextField fx:id="titleField" layoutX="132.0" layoutY="90.0" />
+      <TextField fx:id="descriptionField" layoutX="132.0" layoutY="120.0" />
+      <Button layoutX="51.0" layoutY="406.0" mnemonicParsing="false" onAction="#scheduleAppt" text="Schedule Appointment" />
       <Button fx:id="ReturnToAppointmentScreenId" layoutX="249.0" layoutY="406.0" mnemonicParsing="false" onAction="#ReturnToAppointmentScreenBtn" text="Return to Appointments Screen" />
       <Button fx:id="returnToMainScreenId" layoutX="498.0" layoutY="406.0" mnemonicParsing="false" onAction="#returnToMainScreenBtn" text="Return to Main Menu" />
-      <DatePicker layoutX="132.0" layoutY="236.0" />
+      <DatePicker fx:id="datePicker" layoutX="132.0" layoutY="236.0" />
       <DatePicker layoutX="132.0" layoutY="266.0" />
       <ComboBox fx:id="startComboBox" layoutX="312.0" layoutY="236.0" prefWidth="150.0" />
       <ComboBox fx:id="endComboBox" layoutX="312.0" layoutY="266.0" prefWidth="150.0" />
       <ComboBox fx:id="contactComboBox" layoutX="132.0" layoutY="176.0" prefWidth="150.0" />
       <ComboBox fx:id="locationComboBox" layoutX="132.0" layoutY="146.0" prefWidth="150.0" />
       <ComboBox fx:id="typeComboBox" layoutX="132.0" layoutY="206.0" prefWidth="150.0" />
+      <ComboBox fx:id="userComboBox" layoutX="132.0" layoutY="335.0" prefWidth="150.0" />
+      <ComboBox fx:id="customerComboBox" layoutX="132.0" layoutY="300.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

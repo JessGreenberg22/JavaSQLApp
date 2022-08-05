@@ -25,7 +25,7 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Label>
-      <Button layoutX="521.0" layoutY="274.0" mnemonicParsing="false" text="Cancel Appointment" />
+      <Button layoutX="521.0" layoutY="274.0" mnemonicParsing="false" onAction="#cancelAppt" text="Cancel Appointment" />
       <Button fx:id="updateAppointmetnId" layoutX="313.0" layoutY="274.0" mnemonicParsing="false" onAction="#UpdateApptBtn" text="Update Appointment" />
       <Button fx:id="returnbtnID" layoutX="312.0" layoutY="324.0" mnemonicParsing="false" onAction="#returnOnAction" text="Return to Main Menu" />
    </children>

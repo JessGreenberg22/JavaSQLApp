@@ -27,14 +27,14 @@ public class DBAppointments {
                 String description = rs.getString("Description");
                 String location = rs.getString("Location");
                 String type = rs.getString("type");
-                Timestamp startDateTime = rs.getTimestamp("start");
-                //LocalDateTime start = appointmentStart.toLocalDateTime();
-                Timestamp endDateTime = rs.getTimestamp("end");
-                //LocalDateTime end = appointmentEnd.toLocalDateTime();
+                Timestamp appointmentStart = rs.getTimestamp("start");
+                LocalDateTime start = appointmentStart.toLocalDateTime();
+                Timestamp appointmentEnd = rs.getTimestamp("end");
+                LocalDateTime end = appointmentEnd.toLocalDateTime();
                 int customerId = rs.getInt("Customer_ID");
                 int userId = rs.getInt("User_ID");
                 int contactId = rs.getInt("contact_ID");
-                Appointment a = new Appointment(appointmentId,title,description,location,type,startDateTime,endDateTime,customerId,userId,contactId);
+                Appointment a = new Appointment(appointmentId,title,description,location,type,start,end,customerId,userId,contactId);
                 allAppointments.add(a);
 
             }
@@ -91,8 +91,8 @@ public class DBAppointments {
             ps.setString(2, appointment.getDescription());
             ps.setString(3, appointment.getLocation());
             ps.setString(4, appointment.getType());
-            ps.setTimestamp(5, Timestamp.valueOf(String.valueOf(appointment.getStartDateTime())));
-            ps.setTimestamp(6, Timestamp.valueOf(String.valueOf(appointment.getEndDateTime())));
+            ps.setTimestamp(5, Timestamp.valueOf(String.valueOf(appointment.getStart())));
+            ps.setTimestamp(6, Timestamp.valueOf(String.valueOf(appointment.getEnd())));
             ps.setInt(7, appointment.getCustomerId());
             ps.setInt(8, appointment.getUserId());
             ps.setInt(9, appointment.getContactId());
@@ -116,8 +116,8 @@ public class DBAppointments {
             ps.setString(2, appointment.getDescription());
             ps.setString(3, appointment.getLocation());
             ps.setString(4, appointment.getType());
-            ps.setTimestamp(5, Timestamp.valueOf(String.valueOf(appointment.getStartDateTime())));
-            ps.setTimestamp(6, Timestamp.valueOf(String.valueOf(appointment.getEndDateTime())));
+            ps.setTimestamp(5, Timestamp.valueOf(String.valueOf(appointment.getStart())));
+            ps.setTimestamp(6, Timestamp.valueOf(String.valueOf(appointment.getEnd())));
             ps.setInt(7, appointment.getCustomerId());
             ps.setInt(8, appointment.getUserId());
             ps.setInt(9, appointment.getContactId());
