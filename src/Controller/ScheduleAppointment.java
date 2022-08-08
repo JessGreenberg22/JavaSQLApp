@@ -32,13 +32,13 @@ public class ScheduleAppointment implements Initializable {
     public Button ReturnToAppointmentScreenId;
     public Button returnToMainScreenId;
     /*Ids for combo box and textfields*/
-    public ComboBox contactComboBox;
+    public ComboBox <Contact> contactComboBox;
     public ComboBox locationComboBox;
     public ComboBox startComboBox;
     public ComboBox endComboBox;
     public ComboBox typeComboBox;
-    public ComboBox userComboBox;
-    public ComboBox customerComboBox;
+    public ComboBox <User> userComboBox;
+    public ComboBox <Customer> customerComboBox;
 
     public TextField titleField;
     public TextField descriptionField;
@@ -77,14 +77,14 @@ public class ScheduleAppointment implements Initializable {
         LocalDate date = datePicker.getValue();
         LocalDateTime start = LocalDateTime.of(date, (LocalTime) startComboBox.getValue());
         LocalDateTime end = LocalDateTime.of(date, (LocalTime) endComboBox.getValue());
-        int customerID = (int) customerComboBox.getSelectionModel().getSelectedItem();
-        int userID = (int) userComboBox.getSelectionModel().getSelectedItem();
-        int contactID = (int) contactComboBox.getSelectionModel().getSelectedItem();
+        int customerID = customerComboBox.getSelectionModel().getSelectedItem().getId();
+        int userID = userComboBox.getSelectionModel().getSelectedItem().getUserID();
+        int contactID = contactComboBox.getSelectionModel().getSelectedItem().getContactId();
 
         Appointment newAppointment = new Appointment(-1,appointmentTitle,description,location,type,start,end,customerID,userID, contactID);
         Timestamp startTimestamp = Timestamp.valueOf(start);
         Timestamp endTimestamp = Timestamp.valueOf(end);
-        boolean conflictExists = DBAppointments.checkAppointmentOverlap(startTimestamp, endTimestamp, customerID, -1);
+        boolean conflictExists = DBAppointments.checkAppointmentConflict(startTimestamp, endTimestamp, customerID, -1);
 
         if(!appointmentInputValidation(appointmentTitle) || !appointmentInputValidation(description)){
             Alert alert = new Alert(Alert.AlertType.WARNING);

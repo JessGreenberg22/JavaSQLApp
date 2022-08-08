@@ -11,7 +11,6 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="20.0" layoutY="60.0" text="Appointment ID" />
       <Label layoutX="20.0" layoutY="90.0" text="Title" />
       <Label layoutX="20.0" layoutY="120.0" text="Description" />
       <Label layoutX="20.0" layoutY="150.0" text="Location" />
@@ -21,7 +20,6 @@
       <Label layoutX="20.0" layoutY="270.0" text="End date and time" />
       <Label layoutX="18.0" layoutY="304.0" text="Customer ID" />
       <Label layoutX="22.0" layoutY="339.0" text="User ID" />
-      <TextField editable="false" layoutX="132.0" layoutY="60.0" />
       <TextField fx:id="titleField" layoutX="132.0" layoutY="90.0" />
       <TextField fx:id="descriptionField" layoutX="132.0" layoutY="120.0" />
       <Button layoutX="51.0" layoutY="406.0" mnemonicParsing="false" onAction="#scheduleAppt" text="Schedule Appointment" />

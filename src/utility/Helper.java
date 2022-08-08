@@ -8,11 +8,12 @@ import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
-public class Helper {private static final LocalTime START_BUSINESS_HOURS_EST = LocalTime.of(8,0);
+public class Helper {
+    private static final LocalTime START_BUSINESS_HOURS_EST = LocalTime.of(8,0);
     private static final LocalTime END_BUSINESS_HOURS_EST = LocalTime.of(22,0);
 
-    private static ObservableList<LocalTime> startTimeList = FXCollections.observableArrayList();
-    private static ObservableList<LocalTime> endTimeList = FXCollections.observableArrayList();
+    private static ObservableList<LocalTime> localStartTimeList = FXCollections.observableArrayList();
+    private static ObservableList<LocalTime> localEndTimeList = FXCollections.observableArrayList();
 
     private static void generateStartEndTimes(){
         ZonedDateTime estStartZDT = ZonedDateTime.of(LocalDate.now(),START_BUSINESS_HOURS_EST, ZoneId.of("America/New_York"));
@@ -21,11 +22,11 @@ public class Helper {private static final LocalTime START_BUSINESS_HOURS_EST = L
         //System.out.println("localStart = " + localStart);
         LocalTime localEnd = estEndZDT.withZoneSameInstant(ZoneId.systemDefault()).toLocalTime();
 
-        if(startTimeList.size() == 0 || endTimeList.size() == 0){
+        if(localStartTimeList.size() == 0 || localEndTimeList.size() == 0){
             while (localStart.isBefore(localEnd)){
-                startTimeList.add(localStart);
+                localStartTimeList.add(localStart);
                 localStart = localStart.plusMinutes(15);
-                endTimeList.add(localStart);
+                localEndTimeList.add(localStart);
             }
         }
 
@@ -33,11 +34,11 @@ public class Helper {private static final LocalTime START_BUSINESS_HOURS_EST = L
 
     public static ObservableList<LocalTime> getStartTimeList() {
         generateStartEndTimes();
-        return startTimeList;
+        return localStartTimeList;
     }
 
     public static ObservableList<LocalTime> getEndTimeList() {
         generateStartEndTimes();
-        return endTimeList;
+        return localEndTimeList;
     }
 }

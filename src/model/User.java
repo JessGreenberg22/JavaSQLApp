@@ -96,6 +96,4 @@ public class User {
 
         return(Integer.toString(userID));
     }
-
-
 }

@@ -1,5 +1,7 @@
 package model;
 
+import dao.DBContact;
+
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 /** Appointments Model
@@ -8,92 +10,163 @@ import java.time.LocalDateTime;
 
 /**Appointment Object Class*/
 public class Appointment {
-    private int appointmentId;
-    private String title;
+    private int appointmentID;
+    private String appointmentTitle;
     private String description;
     private String location;
     private String type;
     private LocalDateTime start;
     private LocalDateTime end;
-    private int customerId;
-    private int userId;
-    private int contactId;
+    private LocalDateTime createDate;
+    private String createdBy;
+    private LocalDateTime lastUpdate;
+    private String lastUpdatedBy;
+    private int customerID;
+    private int userID;
+    private int contactID;
 
-    /**Constructor for Appointments*/
+    //empty constructor
+    public Appointment() {
+    }
 
-    public Appointment(int appointmentId, String title, String description, String location, String type, LocalDateTime start,
-                       LocalDateTime end, int customerId, int userId, int contactId)
-    {
-        this.appointmentId = appointmentId;
-        this.title = title;
+    /**
+     * constructor for a new instance of Customer
+     */
+
+    public Appointment(int appointmentID, String appointmentTitle, String description, String location, String type, LocalDateTime start, LocalDateTime end, int customerID, int userID, int contactID) {
+
+        this.appointmentID = appointmentID;
+        this.appointmentTitle = appointmentTitle;
         this.description = description;
         this.location = location;
         this.type = type;
         this.start = start;
         this.end = end;
-        this.customerId = customerId;
-        this.userId = userId;
-        this.contactId = contactId;
+        this.customerID = customerID;
+        this.userID = userID;
+        this.contactID = contactID;
+
     }
-    /**Getters*/
-    public int getAppointmentId()
-    {return appointmentId;}
 
-    public String getTitle()
-        {return title;}
+    /**
+     * defines the getters for Appointment class
+     */
 
-    public String getDescription()
-    {return description;}
+    public int getAppointmentID(){
+        return appointmentID;
+    }
 
-    public String getLocation()
-    {return location;}
+    public String getAppointmentTitle(){
+        return appointmentTitle;
+    }
 
-    public String getType()
-    {return type;}
+    public String getDescription(){
+        return description;
+    }
 
-    public LocalDateTime getStart()
-    {return start;}
+    public String getLocation(){
+        return location;
+    }
 
-    public LocalDateTime getEnd()
-    {return end;}
+    public String getType() {return type;}
 
-    public int getCustomerId()
-    {return customerId;}
+    public String getContactName(){
+        String contactName ="";
+        Contact contact = DBContact.getContact(contactID);
+        if(contact != null){
+            contactName = contact.getContactName();
+        }
+        return contactName;
+    }
 
-    public int getUserId()
-    {return userId;}
+    public LocalDateTime getStart(){
+        return start;
+    }
 
-    public int getContactId()
-    {return contactId;}
+    public LocalDateTime getEnd(){
+        return end;
+    }
 
-    /**Setters*/
-    public void setAppointmentId(int appointmentId)
-    {this.appointmentId = appointmentId;}
+    public LocalDateTime getCreateDate(){
+        return createDate;
+    }
 
-    public void setTitle(String title)
-    {this.title = title;}
+    public String getCreatedBy(){
+        return createdBy;
+    }
 
-    public void setDescription(String description)
-    {this.description = description;}
+    public LocalDateTime getLastUpdate(){
+        return lastUpdate;
+    }
 
-    public void setLocation(String location)
-    {this.location = location;}
+    public String getLastUpdatedBy(){
+        return lastUpdatedBy;
+    }
 
-    public void setType(String type)
-    {this.type = type;}
+    public int getCustomerID(){
+        return customerID;
+    }
 
-    public void setStart(LocalDateTime start)
-    {this.start = start;}
+    public int getUserID(){
+        return userID;
+    }
 
-    public void setEndDateTime(LocalDateTime end)
-    {this.end = end;}
+    public int getContactID() { return contactID;}
 
-    public void setCustomerId(int customerId)
-    {this.customerId = customerId;}
+    /**
+     * default setters for the Appointment class
+     */
 
-    public void setUserId(int userId)
-    {this.userId = userId;}
+    public void setAppointmentID(int appointmentID){
+        this.appointmentID = appointmentID;
+    }
 
-    public void setContactId(int contactId)
-    {this.contactId = contactId;}
+    public void setAppointmentTitle(String appointmentTitle){
+        this.appointmentTitle = appointmentTitle;
+    }
+
+    public void setDescription (String description){
+        this.description = description;
+    }
+
+    public void setLocation (String location){
+        this.location = location;
+    }
+
+    public void setType (String type) {this.type = type;}
+
+    public void setStart (LocalDateTime start){
+        this.start = start;
+    }
+
+    public void setEnd (LocalDateTime end){
+        this.end = end;
+    }
+
+    public void setCreateDate(LocalDateTime createDate){
+        this.createDate = createDate;
+    }
+
+    public void setCreatedBy(String createdBy){
+        this.createdBy = createdBy;
+    }
+
+    public void setLastUpdate(LocalDateTime lastUpdate){
+        this.lastUpdate = lastUpdate;
+    }
+
+    public void setLastUpdatedBy(String lastUpdatedBy){
+        this.lastUpdatedBy = lastUpdatedBy;
+    }
+
+    public void setCustomerID (int customerID){
+        this.customerID = customerID;
+    }
+
+    public void setUserID (int userID){
+        this.userID = userID;
+    }
+
+    public void setContactID(int contactID) { this.contactID = contactID;}
+
 }

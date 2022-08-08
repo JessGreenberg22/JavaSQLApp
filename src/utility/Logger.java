@@ -19,7 +19,6 @@ public class Logger {public static String fileName = "login_activity.txt";
 
         } catch (IOException e) {
             System.out.println("Logger error: " + e.getMessage());
-            // e.printStackTrace();
         }
     }
 }

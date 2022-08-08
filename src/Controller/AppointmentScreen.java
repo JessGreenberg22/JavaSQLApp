@@ -40,16 +40,16 @@ public class AppointmentScreen implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         appointmentTable.setItems(DBAppointments.getAllAppointments());
-        appointmentIdCol.setCellValueFactory(new PropertyValueFactory<>("appointmentId"));
-        appTitleCol.setCellValueFactory(new PropertyValueFactory<>("title"));
+        appointmentIdCol.setCellValueFactory(new PropertyValueFactory<>("appointmentID"));
+        appTitleCol.setCellValueFactory(new PropertyValueFactory<>("appointmentTitle"));
         appDescriptionCol.setCellValueFactory(new PropertyValueFactory<>("description"));
         appLocationCol.setCellValueFactory(new PropertyValueFactory<>("location"));
         appTypeCol.setCellValueFactory(new PropertyValueFactory<>("type"));
-        appContactCol.setCellValueFactory(new PropertyValueFactory<>("contactId"));
-        appStartCol.setCellValueFactory(new PropertyValueFactory<>("startDateTime"));
-        appEndCol.setCellValueFactory(new PropertyValueFactory<>("endDateTime"));
-        appCustIdCol.setCellValueFactory(new PropertyValueFactory<>("customerId"));
-        appUserIdCol.setCellValueFactory(new PropertyValueFactory<>("userId"));
+        appContactCol.setCellValueFactory(new PropertyValueFactory<>("contactID"));
+        appStartCol.setCellValueFactory(new PropertyValueFactory<>("start"));
+        appEndCol.setCellValueFactory(new PropertyValueFactory<>("end"));
+        appCustIdCol.setCellValueFactory(new PropertyValueFactory<>("customerID"));
+        appUserIdCol.setCellValueFactory(new PropertyValueFactory<>("userID"));
     }
 
     /** Navigate to the MainScreen */
@@ -85,11 +85,11 @@ public class AppointmentScreen implements Initializable {
         } else {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Are You Sure?");
-            alert.setContentText("Are you sure you want to cancel this appointment? " + "\n" + "ID: " + selection.getAppointmentId() + " " + selection.getType());
+            alert.setContentText("Are you sure you want to cancel this appointment? " + "\n" + "ID: " + selection.getAppointmentID() + " " + selection.getType());
             Optional<ButtonType> result = alert.showAndWait();
 
             if (result.get() == ButtonType.OK){
-                DBAppointments.deleteAppointment(selection.getAppointmentId());
+                DBAppointments.deleteAppointment(selection.getAppointmentID());
                 appointmentTable.setItems(DBAppointments.getAllAppointments());
                 appointmentIdCol.setCellValueFactory(new PropertyValueFactory<>("appointmentID"));
                 appTitleCol.setCellValueFactory(new PropertyValueFactory<>("appointmentTitle"));
