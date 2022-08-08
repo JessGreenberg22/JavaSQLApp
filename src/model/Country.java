@@ -1,30 +1,74 @@
 package model;
+
+import java.time.LocalDateTime;
+
 /**This is the Country Model*/
 public class Country {
-    private int countryId;
+    private int countryID;
     private String countryName;
+    private LocalDateTime createDate;
+    private String createdBy;
+    private LocalDateTime lastUpdate;
+    private String lastUpdatedBy;
 
-    public Country(int countryId, String countryName){
+    public Country(int countryID, String countryName){
+        this.countryID = countryID;
         this.countryName = countryName;
-        this.countryId = countryId;
     }
 
+    /*getters*/
+    public int getCountryID(){
+        return countryID;
+    }
 
-    //*Getters*//
     public String getCountryName(){
         return countryName;
     }
 
-    public int getCountryId(){
-        return countryId;
+    public LocalDateTime getCreateDate(){
+        return createDate;
     }
 
-    //*Setters*//
+    public String getCreatedBy(){
+        return createdBy;
+    }
+
+    public LocalDateTime getLastUpdate(){
+        return lastUpdate;
+    }
+
+    public String getLastUpdatedBy(){
+        return lastUpdatedBy;
+    }
+
+    /**setters*/
+    public void setCountryID(int countryID){
+        this.countryID = countryID;
+    }
+
     public void setCountryName(String countryName){
         this.countryName = countryName;
     }
 
-    public void setCountryId(int countryId) {
-        this.countryId = countryId;
+    public void setCreateDate(LocalDateTime createDate){
+        this.createDate = createDate;
     }
+
+    public void setCreatedBy(String createdBy){
+        this.createdBy = createdBy;
+    }
+
+    public void setLastUpdate(LocalDateTime lastUpdate){
+        this.lastUpdate = lastUpdate;
+    }
+
+    public void setLastUpdatedBy(String lastUpdatedBy){
+        this.lastUpdatedBy = lastUpdatedBy;
+    }
+
+    @Override
+    public String toString() {
+        return countryName;
+    }
+
 }

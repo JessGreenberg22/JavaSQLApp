@@ -27,6 +27,7 @@ import java.util.ResourceBundle;
  */
 public class CustomerRecords implements Initializable {
    /*TextField and ComboBox Ids*/
+   public ComboBox countryComboBox;
     public ComboBox stateComboBox;
     public TextField customerIDFIeld;
     public TextField customerNameField;
@@ -36,9 +37,10 @@ public class CustomerRecords implements Initializable {
 
     /**Customer Table*/
     public TableView customerTable;
-    public TableColumn customerIDCol;
+    public TableColumn customerIdCol;
     public TableColumn customerNameCol;
     public TableColumn customerAddressCol;
+    public TableColumn customerCountryCol;
     public TableColumn customerStateCol;
     public TableColumn customerPostalCol;
     public TableColumn customerPhoneCol;
@@ -46,33 +48,39 @@ public class CustomerRecords implements Initializable {
     /*Ids for buttons*/
     public Button returnButton;
     public Button deleteButton;
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
 
     /*set Values in the customer Table*/
     {
+        ObservableList<Country> countries = DBCountry.getAllCountries();
+        countryComboBox.setItems(countries);
+
         customerTable.setItems(DBCustomer.getAllCustomers());
-        customerIDCol.setCellValueFactory(new PropertyValueFactory<>("Id"));
+        customerIdCol.setCellValueFactory(new PropertyValueFactory<>("Id"));
         customerNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         customerAddressCol.setCellValueFactory(new PropertyValueFactory<>("Address"));
+        customerCountryCol.setCellValueFactory(new PropertyValueFactory<>("Country"));
         customerStateCol.setCellValueFactory(new PropertyValueFactory<>("division"));
         customerPostalCol.setCellValueFactory(new PropertyValueFactory<>("postalCode"));
         customerPhoneCol.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
-    }
-    /** Navigate to the MainScreen */
-    public void returnToMainScreenAction(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/MainScreen.fxml")));
-        Stage window = (Stage) returnButton.getScene().getWindow();
-        window.setScene(new Scene(root, 800,555));
+
+
     }
 
     /**handler for the state combo box*/
-    public void stateComboBox(ActionEvent actionEvent) throws SQLException {
-        Country selectedCountry = (Country) stateComboBox.getSelectionModel().getSelectedItem();
+    public void onCountryComboBox(ActionEvent actionEvent) throws SQLException {
+        Country selectedCountry = (Country) countryComboBox.getSelectionModel().getSelectedItem();
         if (selectedCountry != null) {
-            ObservableList Division = DBCountry.getFirstLevelDivision(selectedCountry.getCountryId());
+            ObservableList Division = DBCountry.getFirstLevelDivision(selectedCountry.getCountryID());
             stateComboBox.setItems(Division);
         }
+    }
+
+    public void onStateComboBox(ActionEvent actionEvent) {
+
     }
     /**Add a customer to the Database*/
     public void addCustomer(ActionEvent actionEvent) throws IOException {String name = customerNameField.getText();
@@ -131,5 +139,12 @@ public class CustomerRecords implements Initializable {
 
             }
         }
+    }
+
+    /** Navigate to the MainScreen */
+    public void returnToMainScreenAction(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/MainScreen.fxml")));
+        Stage window = (Stage) returnButton.getScene().getWindow();
+        window.setScene(new Scene(root, 800,555));
     }
 }

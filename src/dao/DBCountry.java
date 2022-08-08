@@ -89,9 +89,7 @@ public class DBCountry {
 
     }
 
-    /**
-     * method to get country by passing division ID
-     */
+    /*get country by passing division ID*/
     public static Country getCountryByDivisionID(int divisionID) {
         Country country = null;
         try {
