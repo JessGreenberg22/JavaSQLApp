@@ -15,9 +15,7 @@ public class User {
     private LocalDateTime lastUpdate;
     private String lastUpdatedBy;
 
-    /**
-     * constructor for new instance of User
-     */
+    /**constructor*/
 
     public User(int userID, String userName,String password){
         this.userID = userID;
@@ -28,9 +26,7 @@ public class User {
     public User(int userID) {
     }
 
-    /**
-     * defines the getters for the User class
-     */
+    /**Getters*/
     public int getUserID(){
         return userID;
     }
@@ -59,10 +55,7 @@ public class User {
         return lastUpdatedBy;
     }
 
-    /**
-     * defines the setters for the User class
-     */
-
+    /** Setters*/
     public void setUserID (String userID){
         this.userName = userID;
     }

@@ -34,9 +34,7 @@ public class Customer{
     }
 
 
-    /**
-     * defines the getters for the Customer class
-     */
+    /**Getters*/
 
     public int getId(){
         return customerID;

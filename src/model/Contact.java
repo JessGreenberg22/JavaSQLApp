@@ -1,6 +1,7 @@
 package model;
-/*this is the Contact model*/
-
+/** Contact Model
+ * @Author Jessica Greenberg Student ID 001462404
+ */
 public class Contact {
     private int contactID;
     private String contactName;

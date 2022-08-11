@@ -1,7 +1,9 @@
 package model;
 
 import java.time.LocalDateTime;
-
+/** Report Model
+ * @Author Jessica Greenberg Student ID 001462404
+ */
 public class Report {
 
     private String month;
@@ -79,6 +81,7 @@ public class Report {
         this.totalNumberOfAppointments = totalNumberOfAppointments;
     }
 
+    /**Getters*/
     public String getAppointmentType() {
         return appointmentType;
     }

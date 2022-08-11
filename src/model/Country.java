@@ -2,7 +2,9 @@ package model;
 
 import java.time.LocalDateTime;
 
-/**This is the Country Model*/
+/** Country Model
+ * @Author Jessica Greenberg Student ID 001462404
+ */
 public class Country {
     private int countryID;
     private String countryName;
@@ -16,9 +18,7 @@ public class Country {
         this.countryName = countryName;
     }
 
-    /**
-     defines the getters
-     */
+    /**Getters*/
     public int getCountryID(){
         return countryID;
     }

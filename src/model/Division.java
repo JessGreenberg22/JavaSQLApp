@@ -1,7 +1,9 @@
 package model;
 
 import java.time.LocalDateTime;
-
+/** Division Model
+ * @Author Jessica Greenberg Student ID 001462404
+ */
 public class Division {
 
     private int divisionID;
@@ -19,10 +21,8 @@ public class Division {
         this.divisionName = divisionName;
     }
 
-    /**
-     * defines the getters
-     * @return
-     */
+    /**Getters*/
+
     public int getDivisionID(){
         return divisionID;
     }
