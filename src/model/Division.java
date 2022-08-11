@@ -1,91 +1,39 @@
 package model;
 
-import java.time.LocalDateTime;
-
 public class Division {
 
-    private int divisionID;
-    private String divisionName;
-    private LocalDateTime createDate;
-    private String createdBy;
-    private LocalDateTime lastUpdate;
-    private String lastUpdatedBy;
-    private int countryID;
+    private int divisionId;
+    private int countryId;
+    private String division;
 
-
-
-    public Division (int divisionID, String divisionName){
-        this.divisionID = divisionID;
-        this.divisionName = divisionName;
+    public Division(int divisionId, String division) {
+        this.divisionId = divisionId;
+        this.countryId = countryId;
+        this.division = division;
     }
 
-    /**
-     * defines the getters
-     */
-    public int getDivisionID(){
-        return divisionID;
+        /**getters for the divisions model**/
+        public int getDivisionId(){
+            return divisionId;
+        }
+        public int getCountryId(){
+            return countryId;
+    }
+    public String getDivision(){
+            return division;
     }
 
-    public String getDivisionName(){
-        return divisionName;
+    /**Setters for the divisions model*/
+    public void setCountryId(int countryId) {
+        this.countryId = countryId;
     }
 
-    public   LocalDateTime getCreateDate(){
-        return createDate;
+    public void setDivision(String division) {
+        this.division = division;
     }
 
-    public String getCreatedBy(){
-        return createdBy;
-    }
-
-    public LocalDateTime getLastUpdate(){
-        return lastUpdate;
-    }
-
-    public String getLastUpdatedBy(){
-        return lastUpdatedBy;
-    }
-
-
-    public int getCountryID(){
-        return countryID;
-    }
-
-    /**
-     * defines default setters
-     * @return
-     */
-    public void setDivisionID(int divisionID){
-        this.divisionID = divisionID;
-    }
-
-    public void setDivisionName(String divisionName){
-        this.divisionName = divisionName;
-    }
-
-    public void setCreateDate(LocalDateTime createDate){
-        this.createDate = createDate;
-    }
-
-    public void setCreatedBy(String createdBy){
-        this.createdBy = createdBy;
-    }
-
-    public void setLastUpdate(LocalDateTime lastUpdate){
-        this.lastUpdate = lastUpdate;
-    }
-
-    public void setLastUpdatedBy(String lastUpdatedBy){
-        this.lastUpdatedBy = lastUpdatedBy;
-    }
-
-    public void setCountryID(int countryID){
-        this.countryID = countryID;
-    }
-
-    @Override
-    public String toString() {
-        return divisionName;
+    public void setDivisionId(int divisionId) {
+        this.divisionId = divisionId;
     }
 }
 
