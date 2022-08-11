@@ -4,28 +4,29 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="440.0" prefWidth="784.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CustomerRecords">
+<AnchorPane prefHeight="440.0" prefWidth="809.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CustomerRecords">
    <children>
       <Label layoutX="31.0" layoutY="106.0" text="Customer ID" />
       <Label layoutX="22.0" layoutY="138.0" text="Customer Name" />
       <Label layoutX="44.0" layoutY="168.0" text="Address" />
-      <Label layoutX="35.0" layoutY="234.0" text="Postal code" />
-      <Label layoutX="25.0" layoutY="266.0" text="Phone Number" />
-      <TableView fx:id="customerTable" layoutX="287.0" layoutY="38.0" prefHeight="302.0" prefWidth="453.0">
+      <Label layoutX="36.0" layoutY="275.0" text="Postal code" />
+      <Label layoutX="26.0" layoutY="310.0" text="Phone Number" />
+      <TableView fx:id="customerTable" layoutX="287.0" layoutY="38.0" prefHeight="302.0" prefWidth="513.0">
         <columns>
-          <TableColumn fx:id="customerIDCol" prefWidth="44.0" text="ID" />
-          <TableColumn fx:id="customerNameCol" prefWidth="91.0" text="Name" />
-            <TableColumn fx:id="customerAddressCol" prefWidth="81.0" text="Address" />
-            <TableColumn fx:id="customerStateCol" minWidth="0.0" prefWidth="56.0" text="State" />
-            <TableColumn fx:id="customerPostalCol" prefWidth="78.0" text="Area Code" />
-            <TableColumn fx:id="customerPhoneCol" prefWidth="102.0" text="Phone Number" />
+          <TableColumn fx:id="customerIdCol" prefWidth="44.0" text="ID" />
+          <TableColumn fx:id="customerNameCol" prefWidth="86.0" text="Name" />
+            <TableColumn fx:id="customerAddressCol" prefWidth="86.0" text="Address" />
+            <TableColumn fx:id="customerCountryCol" minWidth="0.0" prefWidth="56.0" text="Country" />
+            <TableColumn fx:id="customerStateCol" prefWidth="67.0" text="State" />
+            <TableColumn fx:id="customerPostalCol" prefWidth="72.0" text="Postal Code" />
+            <TableColumn fx:id="customerPhoneCol" prefWidth="101.0" text="Phone Number" />
         </columns>
       </TableView>
       <TextField fx:id="customerIDFIeld" layoutX="117.0" layoutY="102.0" />
       <TextField fx:id="customerNameField" layoutX="117.0" layoutY="134.0" />
       <TextField fx:id="customerAddressField" layoutX="117.0" layoutY="164.0" />
-      <TextField fx:id="postalCodeField" layoutX="117.0" layoutY="230.0" />
-      <TextField fx:id="phoneNumberField" layoutX="117.0" layoutY="262.0" />
+      <TextField fx:id="postalCodeField" layoutX="118.0" layoutY="271.0" />
+      <TextField fx:id="phoneNumberField" layoutX="117.0" layoutY="306.0" />
       <Button layoutX="302.0" layoutY="350.0" mnemonicParsing="false" onAction="#addCustomer" text="Add Customer" />
       <Button layoutX="450.0" layoutY="350.0" mnemonicParsing="false" text="Modify Customer" />
       <Button fx:id="deleteButton" layoutX="609.0" layoutY="350.0" mnemonicParsing="false" onAction="#deleteCustomer" text="Delete Customer" />
@@ -34,8 +35,10 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Label>
-      <TextField layoutX="552.0" layoutY="9.0" prefHeight="25.0" prefWidth="188.0" promptText="Search Customer by ID or Name" />
-      <Label layoutX="51.0" layoutY="200.0" text="State" />
-      <ComboBox fx:id="stateComboBox" layoutX="117.0" layoutY="196.0" onAction="#stateComboBox" prefWidth="150.0" />
+      <TextField layoutX="609.0" layoutY="9.0" prefHeight="25.0" prefWidth="188.0" promptText="Search Customer by ID or Name" />
+      <Label layoutX="52.0" layoutY="239.0" text="State" />
+      <ComboBox fx:id="stateComboBox" layoutX="118.0" layoutY="235.0" onAction="#onStateComboBox" prefHeight="17.0" prefWidth="150.0" />
+      <Label layoutX="46.0" layoutY="203.0" text="Country" />
+      <ComboBox fx:id="countryComboBox" layoutX="117.0" layoutY="199.0" onAction="#onCountryComboBox" prefHeight="17.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

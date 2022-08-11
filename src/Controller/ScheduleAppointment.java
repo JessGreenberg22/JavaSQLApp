@@ -79,7 +79,7 @@ public class ScheduleAppointment implements Initializable {
         LocalDateTime end = LocalDateTime.of(date, (LocalTime) endComboBox.getValue());
         int customerID = customerComboBox.getSelectionModel().getSelectedItem().getId();
         int userID = userComboBox.getSelectionModel().getSelectedItem().getUserID();
-        int contactID = contactComboBox.getSelectionModel().getSelectedItem().getContactId();
+        int contactID = contactComboBox.getSelectionModel().getSelectedItem().getContactID();
 
         Appointment newAppointment = new Appointment(-1,appointmentTitle,description,location,type,start,end,customerID,userID, contactID);
         Timestamp startTimestamp = Timestamp.valueOf(start);

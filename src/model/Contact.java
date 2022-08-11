@@ -2,37 +2,55 @@ package model;
 /*this is the Contact model*/
 
 public class Contact {
-    private int contactId;
+    private int contactID;
     private String contactName;
     private String email;
 
-    public Contact(int contactId, String contactName, String email){
-        this.contactId = contactId;
+
+    /**
+     * constructor for new instance of contact
+     */
+
+    public Contact(int contactID, String contactName,String email){
+        this.contactID = contactID;
         this.contactName = contactName;
         this.email = email;
     }
-    /*getters for the contact model*/
-    public int getContactId(){
-        return contactId;
+
+    /**
+     * defines the getters for the contacts class
+     */
+    public int getContactID(){
+        return contactID;
     }
+
     public String getContactName(){
         return contactName;
     }
+
     public String getEmail(){
         return email;
     }
 
-    /*setters*/
+    /**
+     * defines the setters for the contacts class
+     */
 
-    public void setContactId(int contactId) {
-        this.contactId = contactId;
+    public void setContactID (int contactID){
+        this.contactID = contactID;
     }
 
-    public void setContactName(String contactName) {
+    public void setContactName(String userName){
         this.contactName = contactName;
     }
 
-    public void setEmail(String email) {
+    public void setEmail (String email){
         this.email = email;
     }
+
+    @Override
+    public String toString() {
+        return contactName;
+    }
+
 }
