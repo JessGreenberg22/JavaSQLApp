@@ -62,7 +62,9 @@ public class CustomerRecords implements Initializable {
         customerIdCol.setCellValueFactory(new PropertyValueFactory<>("Id"));
         customerNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         customerAddressCol.setCellValueFactory(new PropertyValueFactory<>("Address"));
+
         customerCountryCol.setCellValueFactory(new PropertyValueFactory<>("Country"));
+
         customerStateCol.setCellValueFactory(new PropertyValueFactory<>("division"));
         customerPostalCol.setCellValueFactory(new PropertyValueFactory<>("postalCode"));
         customerPhoneCol.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));

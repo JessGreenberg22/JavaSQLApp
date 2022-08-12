@@ -43,10 +43,7 @@ public class Country {
         return lastUpdatedBy;
     }
 
-    /**
-     * define the setters
-     * @return
-     */
+    /**Setters*/
     public void setCountryID(int countryID){
         this.countryID = countryID;
     }

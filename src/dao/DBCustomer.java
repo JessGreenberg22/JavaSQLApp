@@ -9,11 +9,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class DBCustomer { /**
- * method to add customer data to tableview on CustomerScreen
- *
- * @return
- */
+public class DBCustomer {
+
+    /*** displays customer data to tableview on CustomerScreen*/
+
 public static ObservableList<Customer> getAllCustomers() {
 
     ObservableList<Customer> customerList = FXCollections.observableArrayList();
@@ -39,10 +38,11 @@ public static ObservableList<Customer> getAllCustomers() {
             String division = rs.getString("Division");
             String postalCode = rs.getString("Postal_Code");
             String phoneNumber = rs.getString("Phone");
-            Customer c = new Customer(customerID, name, address,divisionID, postalCode, phoneNumber);
-            c.setDivision(division);
-            c.setCountry(country);
-            customerList.add(c);
+
+            Customer nc = new Customer(customerID, name, address, divisionID, postalCode, phoneNumber);
+            nc.setDivision(division);
+            nc.setCountry(country);
+            customerList.add(nc);
         }
     } catch (SQLException throwables) {
         throwables.printStackTrace();
@@ -51,7 +51,7 @@ public static ObservableList<Customer> getAllCustomers() {
     return customerList;
 }
 
-    /**add customer to database*/
+    /**add customer*/
     public static void addCustomer(Customer customer) {
 
         try {
@@ -71,7 +71,7 @@ public static ObservableList<Customer> getAllCustomers() {
         }
     }
 
-    /**modify customer in database*/
+    /**update customer*/
     public static void modifyCustomer(Customer customer) {
 
         try {
@@ -92,7 +92,7 @@ public static ObservableList<Customer> getAllCustomers() {
         }
     }
 
-    /**delete customer and associated appointments in database*/
+    /**delete customer and associated appointments*/
     public static void deleteCustomer(int customerId) {
 
         try {

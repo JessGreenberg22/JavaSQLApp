@@ -21,9 +21,8 @@ public class Customer{
     private LocalDateTime lastUpdate;
     private String lastUpdatedBy;
 
-    /**
-     * constructor for new instance of a product
-     */
+    /**constructor for a new Customer*/
+
     public Customer (int customerID, String name, String address, int divisionID, String postalCode, String phoneNumber) {
         this.customerID = customerID;
         this.name = name;
@@ -80,9 +79,7 @@ public class Customer{
         return lastUpdatedBy;
     }
 
-    /**
-     * defines the setters for the Customer class
-     */
+    /**setters*/
     public void setCustomerID(int customerID){
         this.customerID = customerID;
     }

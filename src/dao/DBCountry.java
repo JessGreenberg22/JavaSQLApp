@@ -27,8 +27,9 @@ public class DBCountry {
             while (rs.next()){
                 int countryID = rs.getInt("Country_ID");
                 String countryName = rs.getString("Country");
-                Country c = new Country(countryID, countryName);
-                clist.add(c);
+
+                Country a = new Country(countryID, countryName);
+                clist.add(a);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -38,7 +39,7 @@ public class DBCountry {
 
     }
 
-    /**method to get divisions using countryID*/
+    /**method retrieves divisions using countryID*/
     public static ObservableList<String> getFirstLevelDivision(int countryID){
 
         ObservableList<String> clist = FXCollections.observableArrayList();
